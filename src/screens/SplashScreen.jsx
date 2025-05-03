@@ -3,13 +3,13 @@ import React, {useEffect} from 'react';
 import LottieView from 'lottie-react-native';
 
 const SplashScreen = ({navigation}) => {
-  //   useEffect(() => {
-  //     const timer = setTimeout(() => {
-  //       navigation.replace('Home'); // assuming you go to Home after splash
-  //     }, 3000); // 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('Main');
+    }, 3000); // 3 seconds
 
-  //     return () => clearTimeout(timer);
-  //   }, []);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <View style={[styles.container]}>
@@ -21,7 +21,6 @@ const SplashScreen = ({navigation}) => {
       <Image
         source={require('../../assets/images/dog.gif')}
         style={styles.gifStyle}
-        resizeMode="contain"
       />
 
       <View style={styles.bottomContainer}>
@@ -52,13 +51,14 @@ const styles = StyleSheet.create({
 
   centerImage: {
     width: '100%',
-    height: '18%',
+    height: '17%',
     marginBottom: 20,
   },
   gifStyle: {
     width: 100,
     height: 100,
     marginBottom: 20,
+    resizeMode: 'contain',
   },
   bottomContainer: {
     position: 'absolute',
