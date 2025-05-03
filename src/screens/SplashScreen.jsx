@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 import React, {useEffect} from 'react';
 import LottieView from 'lottie-react-native';
 
@@ -13,13 +13,24 @@ const SplashScreen = ({navigation}) => {
 
   return (
     <View style={[styles.container]}>
-      <Text style={styles.text}>Bully Supply</Text>
-      {/* <LottieView
-        source={require('./assets/animations/loading.json')}
-        autoPlay
-        loop
-        style={{width: 200, height: 200}}
-      /> */}
+      <Image
+        source={require('../../assets/images/logo.png')}
+        style={styles.centerImage}
+        resizeMode="contain"
+      />
+      <Image
+        source={require('../../assets/images/dog.gif')}
+        style={styles.gifStyle}
+        resizeMode="contain"
+      />
+
+      <View style={styles.bottomContainer}>
+        <Image
+          source={require('../../assets/images/bottom.png')}
+          style={styles.bottomImage}
+          resizeMode="cover"
+        />
+      </View>
     </View>
   );
 };
@@ -31,14 +42,32 @@ const styles = StyleSheet.create({
     // width: '100%',
     // height: '100%',
     // padding: '4%',
-    backgroundColor: 'red',
+    backgroundColor: '#0B1E3E',
     // paddingTop: '10%',
+    paddingBottom: 40,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
-    color: 'black',
-    fontSize: 24,
+
+  centerImage: {
+    width: '100%',
+    height: '18%',
+    marginBottom: 20,
+  },
+  gifStyle: {
+    width: 100,
+    height: 100,
+    marginBottom: 20,
+  },
+  bottomContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+  },
+  bottomImage: {
+    width: '100%',
+    height: 200,
   },
 });
