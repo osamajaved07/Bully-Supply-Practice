@@ -30,7 +30,7 @@ const BottomTabs = () => (
             iconName = focused ? 'search' : 'search-outline';
             break;
           case 'Sell':
-            iconName = focused ? 'add-circle' : 'add-circle-outline';
+            iconName = focused ? 'add' : 'add-outline';
             break;
           case 'Chat':
             iconName = focused ? 'chatbubble' : 'chatbubble-outline';
