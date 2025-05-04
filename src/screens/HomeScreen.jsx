@@ -111,12 +111,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: '5%',
+    paddingHorizontal: '3%',
   },
   locationRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: '5%',
+    paddingHorizontal: '3%',
     marginTop: 18,
   },
   locationText: {
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: '5%',
+    marginHorizontal: '3%',
     marginTop: 17,
     borderRadius: 12,
     backgroundColor: '#FFFFFF',
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     // overflow: 'hidden',
     // alignItems: 'flex-start',
     borderRadius: 10,
-    marginHorizontal: '5%',
+    marginHorizontal: '3%',
     marginTop: 30,
     // padding: 15,
     paddingHorizontal: 15,
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     // flex: 1,
     // paddingRight: 0,
     zIndex: 2,
-    width: '80%',
+    width: '75%',
     paddingTop: 20,
   },
 
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#000',
-    marginHorizontal: '5%',
+    marginHorizontal: '4%',
     marginTop: 25,
     marginBottom: 10,
     textTransform: 'uppercase',
@@ -223,12 +223,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginHorizontal: '5%',
+    marginHorizontal: '3%',
   },
 
   categoryBox: {
     width: '47%', // 2 boxes per row with spacing
-    aspectRatio: 1.1,
+    aspectRatio: 1.3,
     backgroundColor: '#0B1E3E',
     borderRadius: 5,
     justifyContent: 'flex-end',
