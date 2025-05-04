@@ -58,20 +58,25 @@ const HomeScreen = () => {
       </LinearGradient>
 
       {/* Explore Section */}
+
       <Text style={styles.exploreTitle}>Explore Popular Categories</Text>
 
       <View style={styles.categoryGrid}>
         <View style={styles.categoryBox}>
-          <Text style={styles.categoryText}>Dogs</Text>
+          <View style={[styles.semiCircle, {backgroundColor: '#8B1339'}]} />
+          <Text style={styles.categoryText}>Bullies</Text>
         </View>
-        <View style={styles.categoryBox}>
+        <View style={[styles.categoryBox, {backgroundColor: '#8B1339'}]}>
+          <View style={[styles.semiCircle, {backgroundColor: '#0B1E3E'}]} />
           <Text style={styles.categoryText}>Supplies</Text>
         </View>
         <View style={styles.categoryBox}>
-          <Text style={styles.categoryText}>Adoption</Text>
+          <View style={[styles.semiCircle, {backgroundColor: '#8B1339'}]} />
+          <Text style={styles.categoryText}>Care & Services</Text>
         </View>
-        <View style={styles.categoryBox}>
-          <Text style={styles.categoryText}>Veterinary</Text>
+        <View style={[styles.categoryBox, {backgroundColor: '#8B1339'}]}>
+          <Text style={styles.categoryText}>Food & {'\n'}Supplements</Text>
+          <View style={[styles.semiCircle, {backgroundColor: '#0B1E3E'}]} />
         </View>
       </View>
     </View>
@@ -180,7 +185,6 @@ const styles = StyleSheet.create({
 
   cardImage: {
     position: 'absolute',
-
     right: 0,
     top: -8,
     width: '58%',
@@ -210,7 +214,7 @@ const styles = StyleSheet.create({
 
   categoryBox: {
     width: '47%', // 2 boxes per row with spacing
-    aspectRatio: 2.2,
+    aspectRatio: 1.1,
     backgroundColor: '#0B1E3E',
     borderRadius: 5,
     justifyContent: 'flex-end',
@@ -228,5 +232,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: '#fff',
+    textAlign: 'center',
+  },
+  semiCircle: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    width: 40,
+    height: 40,
+    borderTopLeftRadius: 40,
+    zIndex: 1,
   },
 });
