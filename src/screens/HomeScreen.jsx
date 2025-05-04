@@ -12,19 +12,21 @@ import LinearGradient from 'react-native-linear-gradient';
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
+      <View style={styles.backgroundBox} />
+
       {/* ------AppBar------- */}
 
       <View style={styles.appBar}>
         <TouchableOpacity onPress={() => console.log('Menu clicked')}>
-          <Ionicons name="menu" size={28} color="#000" />
+          <Ionicons name="menu" size={28} color="#E0E4E8" />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => console.log('Notification clicked')}>
-          <Ionicons name="notifications-outline" size={28} color="#000" />
+          <Ionicons name="notifications-outline" size={28} color="#E0E4E8" />
         </TouchableOpacity>
       </View>
 
       <View style={styles.locationRow}>
-        <Ionicons name="location-outline" size={20} color="#000" />
+        <Ionicons name="location-outline" size={20} color="#E0E4E8" />
         <Text style={styles.locationText}>Kansas City, USA</Text>
       </View>
 
@@ -42,7 +44,7 @@ const HomeScreen = () => {
       </View>
 
       {/* Card */}
-      <LinearGradient colors={['#C2185B', '#25050F']} style={styles.card}>
+      <LinearGradient colors={['#8B1339', '#25050F']} style={styles.card}>
         <View style={styles.cardText}>
           <Text style={styles.cardHeading}>Give Bully A Loving Home</Text>
           <Text style={styles.cardDescription}>
@@ -75,7 +77,7 @@ const HomeScreen = () => {
           <Text style={styles.categoryText}>Care & Services</Text>
         </View>
         <View style={[styles.categoryBox, {backgroundColor: '#8B1339'}]}>
-          <Text style={styles.categoryText}>Food & {'\n'}Supplements</Text>
+          <Text style={styles.categoryText}>Food & Supplements</Text>
           <View style={[styles.semiCircle, {backgroundColor: '#0B1E3E'}]} />
         </View>
       </View>
@@ -90,6 +92,18 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: '12%',
     // backgroundColor:"#FFFFFF"
+  },
+
+  backgroundBox: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    height: '34%', // Adjust based on how much of the screen it should cover
+    backgroundColor: '#0B1E3E',
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+    zIndex: -1,
   },
 
   appBar: {
@@ -107,7 +121,7 @@ const styles = StyleSheet.create({
   },
   locationText: {
     fontSize: 16,
-    color: '#000',
+    color: '#E0E4E8',
     marginLeft: 5,
     fontWeight: '500',
   },
@@ -117,7 +131,7 @@ const styles = StyleSheet.create({
     marginHorizontal: '5%',
     marginTop: 17,
     borderRadius: 12,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     overflow: 'hidden',
     elevation: 2,
     shadowOffset: {width: 0, height: 2},
@@ -130,11 +144,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     fontSize: 14,
-    color: '#000',
+    color: '#99A2A5',
   },
 
   searchIconWrapper: {
-    backgroundColor: '#FFD700', // yellow
+    backgroundColor: '#FFD166', // yellow
     paddingHorizontal: 12,
     paddingVertical: 10,
     justifyContent: 'center',
@@ -229,10 +243,11 @@ const styles = StyleSheet.create({
   },
 
   categoryText: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: '600',
     color: '#fff',
     textAlign: 'center',
+    paddingHorizontal: 25,
   },
   semiCircle: {
     position: 'absolute',
@@ -241,6 +256,6 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderTopLeftRadius: 40,
-    zIndex: 1,
+    zIndex: -1,
   },
 });
