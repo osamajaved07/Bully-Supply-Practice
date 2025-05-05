@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React, {useEffect} from 'react';
-import LottieView from 'lottie-react-native';
+import FastImage from 'react-native-fast-image';
 
 const SplashScreen = ({navigation}) => {
   useEffect(() => {
@@ -18,16 +18,15 @@ const SplashScreen = ({navigation}) => {
         style={styles.centerImage}
         resizeMode="contain"
       />
-      <Image
-        source={require('../../assets/images/dog.gif')}
+
+      <FastImage
+        source={require('../../assets/animations/dog.gif')}
         style={styles.gifStyle}
       />
-
       <View style={styles.bottomContainer}>
         <Image
           source={require('../../assets/images/bottom.png')}
           style={styles.bottomImage}
-          resizeMode="cover"
         />
       </View>
     </View>
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
 
   centerImage: {
     width: '100%',
-    height: '17%',
+    height: '24%',
     marginBottom: 20,
   },
   gifStyle: {
@@ -68,6 +67,7 @@ const styles = StyleSheet.create({
   },
   bottomImage: {
     width: '100%',
-    height: 200,
+    height: 155,
+    resizeMode: 'cover',
   },
 });

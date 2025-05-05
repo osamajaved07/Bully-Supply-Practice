@@ -3,7 +3,6 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import SellScreen from '../screens/SellScreen';
@@ -54,11 +53,6 @@ const CustomTabBar = () => {
               ) : (
                 <Ionicons name={iconName} size={28} color="#ccc" />
               )}
-              {/* <Text
-                style={[styles.label, {color: focused ? '#fff' : '#ccc'}]}
-                numberOfLines={1}>
-                {label}
-              </Text> */}
             </View>
           );
         },

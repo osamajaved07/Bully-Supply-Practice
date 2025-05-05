@@ -1,4 +1,5 @@
 import {
+  FlatList,
   Image,
   ScrollView,
   StyleSheet,
@@ -139,21 +140,10 @@ const HomeScreen = () => {
           <Text style={styles.rowAction}>See All</Text>
         </View>
 
-        <ScrollView
+        {/* <ScrollView
           horizontal
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.horizontalScroll}>
-          {/* {[...Array(6)].map((_, index) => (
-            <View key={index} style={styles.itemBox}>
-              <Image
-                source={require('../../assets/images/dogpic.png')}
-                style={styles.itemImage}
-              />
-              <Text style={styles.itemText}>Bully #{index + 1}</Text>
-              <Text style={styles.itemText}>2 Months Old</Text>
-              <Text style={styles.itemText}>Available Now</Text>
-            </View>
-          ))} */}
           {bulliesData.map(bully => (
             <View key={bully.id} style={styles.itemBox}>
               <Image source={bully.image} style={styles.itemImage} />
@@ -162,7 +152,22 @@ const HomeScreen = () => {
               <Text style={styles.itemText2}>{bully.price}</Text>
             </View>
           ))}
-        </ScrollView>
+        </ScrollView> */}
+        <FlatList
+          data={bulliesData}
+          keyExtractor={item => item.id.toString()}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.horizontalScroll}
+          renderItem={({item}) => (
+            <View style={styles.itemBox}>
+              <Image source={item.image} style={styles.itemImage} />
+              <Text style={styles.itemText1}>{item.name}</Text>
+              <Text style={styles.itemText1}>{item.Category}</Text>
+              <Text style={styles.itemText2}>{item.price}</Text>
+            </View>
+          )}
+        />
       </ScrollView>
     </View>
   );
@@ -178,7 +183,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // paddingTop: '5%',
-    // backgroundColor:"#FFFFFF"
+    backgroundColor: '#FFFFFF',
   },
 
   backgroundBox: {
@@ -186,7 +191,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: '24%', // Adjust based on how much of the screen it should cover
+    height: '24%',
     backgroundColor: '#0B1E3E',
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
@@ -235,7 +240,7 @@ const styles = StyleSheet.create({
   },
 
   searchIconWrapper: {
-    backgroundColor: '#FFD166', // yellow
+    backgroundColor: '#FFD166',
     paddingHorizontal: 12,
     paddingVertical: 10,
     justifyContent: 'center',
@@ -314,7 +319,7 @@ const styles = StyleSheet.create({
   },
 
   categoryBox: {
-    width: '47%', // 2 boxes per row with spacing
+    width: '47%',
     aspectRatio: 1.3,
     backgroundColor: '#0B1E3E',
     borderRadius: 5,
@@ -365,21 +370,22 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#0B1E3E',
     fontWeight: '600',
+    textDecorationLine: 'underline',
   },
 
   horizontalScroll: {
     paddingHorizontal: '4%',
-    paddingRight: '142%',
+    // paddingRight: '142%',
     paddingTop: '2%',
   },
 
   itemBox: {
     marginBottom: '10%',
-    width: '24%',
+    // width: '50%',
     height: 180,
     backgroundColor: '#F5F5F5',
     borderRadius: 10,
-    marginRight: 12,
+    marginRight: 16,
     overflow: 'hidden',
     elevation: 8,
     shadowColor: '#000',
@@ -404,12 +410,14 @@ const styles = StyleSheet.create({
     color: '#333',
     marginBottom: 2,
     paddingLeft: 12,
+    paddingRight: 70,
   },
   itemText2: {
     fontWeight: 'bold',
     fontSize: 13,
     color: '#8B1339',
     marginBottom: 2,
+    paddingRight: 70,
     paddingLeft: 12,
   },
 });
