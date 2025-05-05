@@ -10,6 +10,9 @@ import {
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
+import {Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window');
 
 const HomeScreen = () => {
   const bulliesData = [
@@ -177,8 +180,8 @@ export default HomeScreen;
 
 const styles = StyleSheet.create({
   scrollContent: {
-    paddingTop: '5%',
-    paddingBottom: '30%',
+    paddingTop: height * 0.02,
+    paddingBottom: height * 0.12,
   },
   container: {
     // flex: 1,
@@ -191,7 +194,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    height: '24%',
+    height: height * 0.28,
     backgroundColor: '#0B1E3E',
     borderBottomLeftRadius: 15,
     borderBottomRightRadius: 15,
@@ -203,13 +206,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: '4%',
+    marginHorizontal: width * 0.04,
   },
   locationRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: '4%',
-    marginTop: 18,
+    marginHorizontal: width * 0.04,
+    marginTop: height * 0.03,
   },
   locationText: {
     fontSize: 16,
@@ -220,7 +223,7 @@ const styles = StyleSheet.create({
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: '4%',
+    marginHorizontal: width * 0.04,
     marginTop: 17,
     borderRadius: 12,
     backgroundColor: '#FFFFFF',
@@ -233,34 +236,27 @@ const styles = StyleSheet.create({
 
   searchInput: {
     flex: 1,
-    paddingVertical: 10,
-    paddingHorizontal: 15,
+    paddingVertical: height * 0.01,
+    paddingHorizontal: width * 0.04,
     fontSize: 14,
     color: '#99A2A5',
   },
 
   searchIconWrapper: {
     backgroundColor: '#FFD166',
-    paddingHorizontal: 12,
-    paddingVertical: 10,
+    paddingVertical: height * 0.01,
+    paddingHorizontal: width * 0.065,
     justifyContent: 'center',
     alignItems: 'center',
   },
   card: {
-    height: '16%',
+    height: height * 0.2,
     flexDirection: 'row',
-    // position: 'relative',
-    // justifyContent: 'space-between',
-    // paddingLeft: 15,
+    marginHorizontal: width * 0.04,
+    marginTop: height * 0.04,
+    paddingHorizontal: width * 0.04,
     justifyContent: 'flex-start',
-    // overflow: 'hidden',
-    // alignItems: 'flex-start',
     borderRadius: 10,
-    marginHorizontal: '4%',
-    marginTop: 30,
-    // padding: 15,
-    paddingHorizontal: 15,
-    // paddingVertical: 15,
     elevation: 4,
     shadowColor: '#000',
     shadowOffset: {width: 0, height: 2},
@@ -269,45 +265,43 @@ const styles = StyleSheet.create({
   },
 
   cardText: {
-    // flex: 1,
-    // paddingRight: 0,
     zIndex: 2,
-    width: '72%',
-    paddingTop: 20,
+    width: width * 0.61,
+    paddingTop: height * 0.02,
   },
 
   cardHeading: {
     fontSize: 22,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    paddingBottom: 18,
+    paddingBottom: height * 0.022,
   },
 
   cardDescription: {
     fontSize: 14,
     color: '#E0E4E8',
-    lineHeight: 20,
+    lineHeight: height * 0.025,
   },
 
   cardImage: {
     position: 'absolute',
     right: 0,
-    top: -8,
+    top: -height * 0.02,
     width: '58%',
-    height: '135%',
+    height: '150%',
     zIndex: 1,
     opacity: 0.95,
     // borderRadius: 10,
     resizeMode: 'contain',
-    opacity: 0.95,
   },
+
   exploreTitle: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#000',
-    marginHorizontal: '4%',
-    marginTop: 25,
-    marginBottom: 10,
+    marginHorizontal: width * 0.04,
+    marginTop: height * 0.03,
+    marginBottom: height * 0.015,
     textTransform: 'uppercase',
   },
 
@@ -315,20 +309,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    marginHorizontal: '4%',
+    marginHorizontal: width * 0.04,
   },
 
   categoryBox: {
-    width: '47%',
+    width: width * 0.442,
     aspectRatio: 1.3,
     backgroundColor: '#0B1E3E',
     borderRadius: 5,
     justifyContent: 'flex-end',
     alignItems: 'center',
     paddingBottom: 18,
-    marginBottom: 15,
-    elevation: 2,
-    shadowColor: '#000',
+    marginBottom: height * 0.015,
+    elevation: 8,
+    shadowColor: 'black',
     shadowOffset: {width: 0, height: 2},
     shadowOpacity: 0.1,
     shadowRadius: 3,
@@ -339,7 +333,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#fff',
     textAlign: 'center',
-    paddingHorizontal: 25,
+    paddingHorizontal: width * 0.02,
   },
   semiCircle: {
     position: 'absolute',
@@ -354,8 +348,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: '4%',
-    marginTop: 12,
+    marginHorizontal: width * 0.04,
+    marginTop: height * 0.02,
     marginBottom: 4,
   },
 
@@ -376,16 +370,16 @@ const styles = StyleSheet.create({
   horizontalScroll: {
     paddingHorizontal: '4%',
     // paddingRight: '142%',
-    paddingTop: '2%',
+    paddingTop: height * 0.008,
   },
 
   itemBox: {
-    marginBottom: '10%',
+    marginBottom: height * 0.018,
     // width: '50%',
-    height: 180,
+    height: height * 0.28,
     backgroundColor: '#F5F5F5',
     borderRadius: 10,
-    marginRight: 16,
+    marginRight: width * 0.04,
     overflow: 'hidden',
     elevation: 8,
     shadowColor: '#000',
@@ -398,7 +392,7 @@ const styles = StyleSheet.create({
 
   itemImage: {
     width: '100%',
-    height: '60%',
+    height: '64%',
     resizeMode: 'cover',
     // borderRadius: 8,
     marginBottom: 8,
@@ -409,15 +403,16 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#333',
     marginBottom: 2,
-    paddingLeft: 12,
-    paddingRight: 70,
+    paddingLeft: width * 0.025,
+    paddingRight: width * 0.3,
   },
   itemText2: {
     fontWeight: 'bold',
-    fontSize: 13,
+    fontSize: 14,
     color: '#8B1339',
     marginBottom: 2,
-    paddingRight: 70,
-    paddingLeft: 12,
+    marginTop: 4,
+    paddingLeft: width * 0.025,
+    paddingRight: width * 0.3,
   },
 });
