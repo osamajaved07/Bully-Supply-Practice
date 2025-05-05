@@ -9,7 +9,8 @@ import SearchScreen from './src/screens/SearchScreen';
 import SellScreen from './src/screens/SellScreen';
 import ChatScreen from './src/screens/ChatScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import CustomTabBarButton from './src/components/bottombar';
+import CustomTabBarButton from './src/components/CustomTabBar';
+import CustomTabBar from './src/components/CustomTabBar';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -57,94 +58,7 @@ const Tab = createBottomTabNavigator();
 //     <Tab.Screen name="Profile" component={ProfileScreen} />
 //   </Tab.Navigator>
 // );
-
-const BottomTabs = () => (
-  <Tab.Navigator
-    screenOptions={{
-      headerShown: false,
-      tabBarLabelStyle: {
-        color: '#EAEAEA',
-      },
-      tabBarStyle: {
-        // height: 60,
-        backgroundColor: '#0B1E3E',
-
-        // position: 'absolute',
-      },
-      // tabBarShowLabel: false,
-    }}>
-    <Tab.Screen
-      name="Home"
-      component={HomeScreen}
-      options={{
-        tabBarIcon: ({focused}) => (
-          <Ionicons
-            name={focused ? 'home' : 'home-outline'}
-            size={28}
-            color={focused ? 'yellow' : 'gray'}
-          />
-        ),
-        tabBarButton: props => <CustomTabBarButton {...props} />,
-      }}
-    />
-    <Tab.Screen
-      name="Search"
-      component={SearchScreen}
-      options={{
-        tabBarIcon: ({focused}) => (
-          <Ionicons
-            name={focused ? 'search' : 'search-outline'}
-            size={28}
-            color={focused ? 'yellow' : 'gray'}
-          />
-        ),
-        tabBarButton: props => <CustomTabBarButton {...props} />,
-      }}
-    />
-    <Tab.Screen
-      name="Sell"
-      component={SellScreen}
-      options={{
-        tabBarIcon: ({focused}) => (
-          <Ionicons
-            name={focused ? 'add' : 'add-outline'}
-            size={28}
-            color={focused ? 'yellow' : 'gray'}
-          />
-        ),
-        tabBarButton: props => <CustomTabBarButton {...props} />,
-      }}
-    />
-    <Tab.Screen
-      name="Chat"
-      component={ChatScreen}
-      options={{
-        tabBarIcon: ({focused}) => (
-          <Ionicons
-            name={focused ? 'chatbubble' : 'chatbubble-outline'}
-            size={28}
-            color={focused ? 'yellow' : 'gray'}
-          />
-        ),
-        tabBarButton: props => <CustomTabBarButton {...props} />,
-      }}
-    />
-    <Tab.Screen
-      name="Profile"
-      component={ProfileScreen}
-      options={{
-        tabBarIcon: ({focused}) => (
-          <Ionicons
-            name={focused ? 'person' : 'person-outline'}
-            size={28}
-            color={focused ? 'yellow' : 'gray'}
-          />
-        ),
-        tabBarButton: props => <CustomTabBarButton {...props} />,
-      }}
-    />
-  </Tab.Navigator>
-);
+const BottomTabs = CustomTabBar;
 
 const App = () => {
   return (
