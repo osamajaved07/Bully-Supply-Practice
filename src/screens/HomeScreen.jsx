@@ -143,19 +143,29 @@ const HomeScreen = () => {
           <Text style={styles.rowAction}>See All</Text>
         </View>
 
-        {/* <ScrollView
+        <FlatList
+          data={bulliesData}
+          keyExtractor={item => item.id.toString()}
           horizontal
           showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.horizontalScroll}>
-          {bulliesData.map(bully => (
-            <View key={bully.id} style={styles.itemBox}>
-              <Image source={bully.image} style={styles.itemImage} />
-              <Text style={styles.itemText1}>{bully.name}</Text>
-              <Text style={styles.itemText1}>{bully.Category}</Text>
-              <Text style={styles.itemText2}>{bully.price}</Text>
+          contentContainerStyle={styles.horizontalScroll}
+          renderItem={({item}) => (
+            <View style={styles.itemBox}>
+              <Image source={item.image} style={styles.itemImage} />
+              <Text style={styles.itemText1}>{item.name}</Text>
+              <Text style={styles.itemText1}>{item.Category}</Text>
+              <Text style={styles.itemText2}>{item.price}</Text>
             </View>
-          ))}
-        </ScrollView> */}
+          )}
+        />
+
+        {/* Feature Product Section */}
+
+        <View style={styles.rowHeader}>
+          <Text style={styles.rowTitle}>Featured Products</Text>
+          <Text style={styles.rowAction}>See All</Text>
+        </View>
+
         <FlatList
           data={bulliesData}
           keyExtractor={item => item.id.toString()}
