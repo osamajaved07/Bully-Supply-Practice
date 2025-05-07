@@ -1,6 +1,7 @@
 import {
   FlatList,
   Image,
+  ImageBackground,
   ScrollView,
   StyleSheet,
   Text,
@@ -181,6 +182,37 @@ const HomeScreen = () => {
             </View>
           )}
         />
+
+        {/* Shop Section */}
+        <View style={styles.rowHeader}>
+          <Text style={styles.rowTitle}>Shops</Text>
+          <Text style={styles.rowAction}>See All</Text>
+        </View>
+
+        <View style={styles.productcard}>
+          <ImageBackground
+            source={require('../../assets/images/cardbg.png')} // Background image
+            style={styles.productCardImage}
+            imageStyle={{borderRadius: 15}}>
+            <View style={styles.overlay}>
+              {/* Text section on the left */}
+              <View style={styles.textContainer}>
+                <Text style={styles.title}>Give A Bully A Loving Home</Text>
+                <Text style={styles.description}>
+                  They Will return the love unconditionally. Adopt today and
+                  make the difference.
+                </Text>
+              </View>
+
+              {/* Image on the right */}
+              <Image
+                source={require('../../assets/images/product1.png')}
+                style={styles.sideImage}
+                resizeMode="contain"
+              />
+            </View>
+          </ImageBackground>
+        </View>
       </ScrollView>
     </View>
   );
@@ -425,5 +457,49 @@ const styles = StyleSheet.create({
     marginTop: 4,
     paddingLeft: width * 0.025,
     paddingRight: width * 0.3,
+  },
+
+  // --------------------------x----------------------------------x--------------------
+
+  productcard: {
+    marginHorizontal: width * 0.04,
+    marginTop: height * 0.01,
+  },
+  productCardImage: {
+    // width: width - 30,
+    height: height * 0.165,
+    borderRadius: 15,
+    overflow: 'hidden',
+    // justifyContent: 'space-between',
+  },
+  overlay: {
+    flexDirection: 'row',
+    paddingHorizontal: '4%',
+    paddingVertical: '4%',
+    borderRadius: 15,
+    // alignItems: 'center',
+    height: '100%',
+  },
+  textContainer: {
+    flex: 1,
+    // paddingRight: '10%',
+    paddingTop: '4%',
+  },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 6,
+  },
+  description: {
+    color: '#E0E4E8',
+    fontSize: 10,
+    paddingTop: '2%',
+  },
+  sideImage: {
+    width: '60%',
+    height: '100%',
+    borderRadius: 10,
+    resizeMode: 'contain',
   },
 });
