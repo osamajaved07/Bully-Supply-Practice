@@ -470,19 +470,19 @@ const styles = StyleSheet.create({
     height: height * 0.165,
     borderRadius: 15,
     overflow: 'hidden',
-    // justifyContent: 'space-between',
+    justifyContent: 'space-between',
   },
   overlay: {
     flexDirection: 'row',
     paddingHorizontal: '4%',
     paddingVertical: '4%',
     borderRadius: 15,
-    // alignItems: 'center',
+    alignItems: 'center',
     height: '100%',
   },
   textContainer: {
     flex: 1,
-    // paddingRight: '10%',
+    paddingRight: '10%',
     paddingTop: '4%',
   },
   title: {
@@ -497,6 +497,7 @@ const styles = StyleSheet.create({
     paddingTop: '2%',
   },
   sideImage: {
+    right: 0,
     width: '60%',
     height: '100%',
     borderRadius: 10,
