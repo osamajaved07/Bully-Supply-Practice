@@ -12,8 +12,10 @@ import {
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 import {Dimensions} from 'react-native';
+import CustomMenuButton from '../components/CustomMenuButton';
 
 const {width, height} = Dimensions.get('window');
+const shopCards = Array.from({length: 6});
 
 const HomeScreen = () => {
   const bulliesData = [
@@ -72,9 +74,12 @@ const HomeScreen = () => {
         {/* ------AppBar------- */}
 
         <View style={styles.appBar}>
-          <TouchableOpacity onPress={() => console.log('Menu clicked')}>
+          <CustomMenuButton />
+
+          {/* <TouchableOpacity onPress={() => console.log('Menu clicked')}>
             <Ionicons name="menu" size={28} color="#E0E4E8" />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+
           <TouchableOpacity onPress={() => console.log('Notification clicked')}>
             <Ionicons name="notifications-outline" size={28} color="#E0E4E8" />
           </TouchableOpacity>
@@ -183,36 +188,26 @@ const HomeScreen = () => {
           )}
         />
 
-        {/* Shop Section */}
+        {/* Shop Section
         <View style={styles.rowHeader}>
           <Text style={styles.rowTitle}>Shops</Text>
           <Text style={styles.rowAction}>See All</Text>
         </View>
 
-        <View style={styles.productcard}>
-          <ImageBackground
-            source={require('../../assets/images/cardbg.png')} // Background image
-            style={styles.productCardImage}
-            imageStyle={{borderRadius: 15}}>
-            <View style={styles.overlay}>
-              {/* Text section on the left */}
-              <View style={styles.textContainer}>
-                <Text style={styles.title}>Give A Bully A Loving Home</Text>
-                <Text style={styles.description}>
-                  They will return the love unconditionally. Adopt today and
-                  make the difference.
-                </Text>
-              </View>
-
-              {/* Image on the right */}
-              <Image
-                source={require('../../assets/images/product1.png')}
-                style={styles.sideImage}
-                resizeMode="cover"
-              />
-            </View>
-          </ImageBackground>
-        </View>
+        <FlatList
+          data={shopCards}
+          // data={[1, 2, 3, 4]}
+          horizontal={true}
+          renderItem={() => <ShopCard />}
+          keyExtractor={(_, index) => index.toString()}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={
+            {
+              // paddingLeft: width * 0.04,
+              // marginBottom: height * 0.2,
+            }
+          }
+        /> */}
       </ScrollView>
     </View>
   );
@@ -463,45 +458,4 @@ const styles = StyleSheet.create({
   },
 
   // --------------------------x----------------------------------x--------------------
-
-  productcard: {
-    marginHorizontal: width * 0.04,
-    marginTop: height * 0.01,
-  },
-  productCardImage: {
-    // width: width - 30,
-    height: height * 0.165,
-    borderRadius: 15,
-    // overflow: 'hidden',
-    // justifyContent: 'space-between',
-  },
-  overlay: {
-    flexDirection: 'row',
-    paddingHorizontal: '4%',
-    paddingVertical: '4%',
-    // borderRadius: 15,
-    // alignItems: 'center',
-    height: '100%',
-  },
-  textContainer: {
-    flex: 1,
-    paddingRight: '10%',
-    paddingTop: '4%',
-  },
-  title: {
-    color: '#FFFFFF',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 6,
-  },
-  description: {
-    color: '#E0E4E8',
-    fontSize: 10,
-    paddingTop: '2%',
-  },
-  sideImage: {
-    width: '40%',
-    height: '100%',
-    borderRadius: 10,
-  },
 });
