@@ -199,7 +199,7 @@ const HomeScreen = () => {
               <View style={styles.textContainer}>
                 <Text style={styles.title}>Give A Bully A Loving Home</Text>
                 <Text style={styles.description}>
-                  They Will return the love unconditionally. Adopt today and
+                  They will return the love unconditionally. Adopt today and
                   make the difference.
                 </Text>
               </View>
@@ -208,7 +208,7 @@ const HomeScreen = () => {
               <Image
                 source={require('../../assets/images/product1.png')}
                 style={styles.sideImage}
-                resizeMode="contain"
+                resizeMode="cover"
               />
             </View>
           </ImageBackground>
@@ -292,7 +292,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   card: {
-    height: height * 0.2,
+    // height: height * 0.2,
     flexDirection: 'row',
     marginHorizontal: width * 0.04,
     marginTop: height * 0.04,
@@ -310,6 +310,7 @@ const styles = StyleSheet.create({
     zIndex: 2,
     width: width * 0.61,
     paddingTop: height * 0.02,
+    marginBottom: '12%',
   },
 
   cardHeading: {
@@ -323,7 +324,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#E0E4E8',
     lineHeight: height * 0.025,
-    paddingBottom: 10,
+    // paddingBottom: 10,
   },
 
   cardImage: {
@@ -419,7 +420,8 @@ const styles = StyleSheet.create({
   itemBox: {
     marginBottom: height * 0.018,
     // width: '50%',
-    height: height * 0.28,
+    // height: height * 0.28,
+    // paddingBottom: '20%',
     backgroundColor: '#F5F5F5',
     borderRadius: 10,
     marginRight: width * 0.04,
@@ -445,7 +447,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 13,
     color: '#333',
-    marginBottom: 2,
+    marginBottom: '2%',
     paddingLeft: width * 0.025,
     paddingRight: width * 0.3,
   },
@@ -453,10 +455,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 14,
     color: '#8B1339',
-    marginBottom: 2,
+    marginBottom: '62%',
     marginTop: 4,
     paddingLeft: width * 0.025,
     paddingRight: width * 0.3,
+    // paddingBottom: '20%',
   },
 
   // --------------------------x----------------------------------x--------------------
@@ -469,15 +472,15 @@ const styles = StyleSheet.create({
     // width: width - 30,
     height: height * 0.165,
     borderRadius: 15,
-    overflow: 'hidden',
-    justifyContent: 'space-between',
+    // overflow: 'hidden',
+    // justifyContent: 'space-between',
   },
   overlay: {
     flexDirection: 'row',
     paddingHorizontal: '4%',
     paddingVertical: '4%',
-    borderRadius: 15,
-    alignItems: 'center',
+    // borderRadius: 15,
+    // alignItems: 'center',
     height: '100%',
   },
   textContainer: {
@@ -497,10 +500,8 @@ const styles = StyleSheet.create({
     paddingTop: '2%',
   },
   sideImage: {
-    right: 0,
-    width: '60%',
+    width: '40%',
     height: '100%',
     borderRadius: 10,
-    resizeMode: 'contain',
   },
 });
